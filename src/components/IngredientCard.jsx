@@ -33,7 +33,7 @@ function IngredientCard({ id, name, thumb }) {
   return (
     <div data-testid={ `${id}-ingredient-card` } className="item-card">
       <Link to={ newPath } onClick={ handleClick }>
-        <h2 data-testid={ `${id}-card-name` }>{ name }</h2>
+        <h4 data-testid={ `${id}-card-name` }>{ name }</h4>
         <img src={ thumb } alt={ name } data-testid={ `${id}-card-img` } />
       </Link>
     </div>

@@ -66,7 +66,6 @@ function RecipesDetails() {
   };
 
   useEffect(() => {
-    setDetails([]);
     handleFecthDetail();
     handleFecthRecipes();
   }, [id]);
