@@ -21,7 +21,15 @@ function ShareButton({ setLoadMessage, testid, smallRecipeCard, url, index }) {
 
   const shareRecipe = () => {
     copy(copyLink);
-    setLoadMessage(index);
+    if (smallRecipeCard) {
+      setLoadMessage(index);
+    } else {
+      const time = 3000;
+      setLoadMessage(true);
+      setTimeout(() => {
+        setLoadMessage(false);
+      }, time);
+    }
   };
 
   return (

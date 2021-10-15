@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import FavoriteButton from '../components/FavoriteButton';
 import IngredientsList from '../components/IngredientsList';
 import RecipeHead from '../components/RecipeHead';
@@ -9,7 +9,6 @@ import RecipeImage from '../components/RecipeImage';
 import RecipeInstructions from '../components/RecipeInstructions';
 import ShareButton from '../components/ShareButton';
 import StartRecipesBtn from '../components/StartRecipesBtn';
-import { setDetailsValues } from '../redux/actions';
 import { fetchDetails, fetchRecipes } from '../services/requests';
 import '../styles/itemCard.css';
 import changeVideoLink from '../utils/changeVideoLink';
@@ -19,15 +18,8 @@ function RecipesDetails() {
   const [details, setDetails] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [loadMessage, setLoadMessage] = useState(false);
-  const [loadingCards, setLoadingCards] = useState(true);
-  const [loadingDetails, setLoadingDetails] = useState(true);
   const history = useHistory();
   const { id } = useParams();
-
-  const shouldLoadValues = useSelector(({ functionsReducer }) => (
-    functionsReducer.loadValues
-  ));
-  const dispatch = useDispatch();
 
   const path = history.location.pathname;
   let api;
@@ -62,13 +54,6 @@ function RecipesDetails() {
     type = 'comidas';
   }
 
-  const changeRoute = (ids) => {
-    history.push(`/${type}/${ids}`);
-    dispatch(setDetailsValues(true));
-    setLoadingCards(true);
-    setLoadingDetails(true);
-  };
-
   const handleFecthDetail = async () => {
     const apiReturn = await fetchDetails(api, id);
     setDetails(apiReturn);
@@ -81,30 +66,17 @@ function RecipesDetails() {
   };
 
   useEffect(() => {
-    if (shouldLoadValues) {
-      handleFecthDetail();
-      handleFecthRecipes();
-      dispatch(setDetailsValues(false));
-    }
-  });
+    setDetails([]);
+    handleFecthDetail();
+    handleFecthRecipes();
+  }, [id]);
 
-  useEffect(() => {
-    if (details.length > 0 && details[0][thumb] !== undefined) {
-      setLoadingDetails(false);
-    }
-  }, [details]);
-
-  useEffect(() => {
-    if (recipes.length > 0 && recipes[0][strRecipe] !== undefined) {
-      setLoadingCards(false);
-    }
-  }, [recipes]);
-
-  useEffect(() => () => {
-    dispatch(setDetailsValues(true));
-  }, []);
-
-  if (details.length === 0 || !details) return 'loading';
+  if ((details.length === 0 || !details) || (recipes.length === 0 || !recipes)) {
+    return 'loading';
+  }
+  if (!details[0][thumb] || !recipes[0][strRecipe]) {
+    return 'loading';
+  }
   const listOfIngredients = handleIngredientsList(details[0]);
 
   let player = details[0].strYoutube;
@@ -112,7 +84,7 @@ function RecipesDetails() {
 
   return (
     <div>
-      {!loadingDetails && <RecipeImage thumb={ details[0][thumb] } />}
+      <RecipeImage thumb={ details[0][thumb] } />
       <div className="head-details">
         <RecipeHead title={ details[0][title] } category={ details[0][category] } />
         <div className="head-btns">
@@ -147,19 +119,20 @@ function RecipesDetails() {
       <div className="recomended">
         <h3>Recommended Recipes</h3>
         <div className="item-card-cont-details">
-          {!loadingCards && recipes.map((recipe, index) => (
+          {recipes.map((recipe, index) => (
             <div
               className="item-card-recomend"
               data-testid={ `${index}-recomendation-card` }
               key={ `${recipe[strRecipe]}` }
             >
               <p data-testid={ `${index}-recomendation-title` }>{recipe[strRecipe]}</p>
-              <input
-                type="image"
-                src={ recipe[recipeThumb] }
-                alt={ recipe[strRecipe] }
-                onClick={ () => changeRoute(recipe[idIten]) }
-              />
+              <Link to={ `/${type}/${recipe[idIten]}` }>
+                <input
+                  type="image"
+                  src={ recipe[recipeThumb] }
+                  alt={ recipe[strRecipe] }
+                />
+              </Link>
             </div>
           ))}
         </div>

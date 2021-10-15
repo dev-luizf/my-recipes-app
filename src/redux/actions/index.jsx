@@ -7,7 +7,6 @@ export const SET_DRINK_LIST = 'SET_DRINK_LIST';
 export const SET_FOOD_LIST = 'SET_FOOD_LIST';
 export const SET_RELOAD_LIST = 'SET_RELOAD_LIST';
 export const ENABLE_DISABLE_FINISH_BUTTON = 'ENABLE_DISABLE_FINISH_BUTTON';
-export const LOAD_DETAILS_VALUES = 'LOAD_DETAILS_VALUES';
 
 export const setUserEmail = (email) => ({
   type: LOGIN, email,
@@ -47,10 +46,5 @@ export const setReloadList = (value) => ({
 
 export const setButtonState = (value) => ({
   type: ENABLE_DISABLE_FINISH_BUTTON,
-  value,
-});
-
-export const setDetailsValues = (value) => ({
-  type: LOAD_DETAILS_VALUES,
   value,
 });
