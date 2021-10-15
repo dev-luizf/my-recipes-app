@@ -1,0 +1,51 @@
+{
+  "name": "recipes-app-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "clipboard-copy": "^3.2.0",
+    "history": "^4.7.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.13.1",
+    "react-logger": "^1.1.0",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "websocket-extensions": ">=0.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "CI=false react-scripts build",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
+    "lint:styles": "npx stylelint '**/*.css'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "clipboardy": "^2.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-trybe-frontend": "1.2.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "stylelint": "^13.8.0",
+    "stylelint-order": "^4.1.0"
+  }
+}

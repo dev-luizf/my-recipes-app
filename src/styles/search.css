@@ -1,0 +1,29 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5px auto;
+  width: 90%;
+}
+
+.search-bar label {
+  margin: 5px 3%;
+}
+
+.radio-btns {
+  margin: 3px 0;
+}
+
+.input-search {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+.search-bar button {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 25px;
+}

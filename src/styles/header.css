@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  align-items: center;
+  background-color: lightblue;
+  display: flex;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.header button {
+  background: none;
+  border-style: none;
+  width: fit-content;
+}
+
+.btn-profile {
+  left: 5%;
+  position: absolute;
+}
+
+.header-title {
+  text-align: center;
+  width: 100%;
+}
+
+.btn-search {
+  position: absolute;
+  right: 5%;
+}

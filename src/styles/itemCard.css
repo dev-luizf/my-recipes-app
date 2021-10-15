@@ -1,0 +1,152 @@
+.img-details img {
+  width: 100%;
+}
+
+.item-card {
+  background-color: lightblue;
+  border-color: lightcyan;
+  border-radius: 10px;
+  border-style: solid;
+  display: inline-block;
+  margin: 5% 0;
+  padding: 10px;
+  text-align: center;
+  width: 160px;
+}
+
+.item-card-recomend {
+  background-color: lightblue;
+  border-color: lightcyan;
+  border-radius: 10px;
+  border-style: solid;
+  display: inline-block;
+  margin: 5% 0;
+  margin-right: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 160px;
+}
+
+.btn-start {
+  bottom: 0;
+  height: 50px;
+  left: 15%;
+  position: fixed;
+  width: 250px;
+}
+
+.recomended {
+  margin: auto;
+  width: 340px;
+}
+
+.recomended h3 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.player-video {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.item-card img, .item-card-recomend input {
+  width: 100%;
+}
+
+.item-card h4, .item-card-recomend h4 {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  height: 100px;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.item-card-container {
+  align-items: center;
+  align-self: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.item-card-cont-details {
+  align-items: baseline;
+  display: block;
+  margin-bottom: 60px;
+  overflow: scroll;
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.head-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.head-btns button, .head-btns input {
+  background-color: transparent;
+  border-style: none;
+  margin-right: 10px;
+  width: 50px;
+}
+
+.head-btns img, .head-btns input {
+  height: 26px;
+  width: 26px;
+}
+
+::-webkit-scrollbar {
+  width: 0.1px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darkgrey;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.item-card-details img {
+  width: 100%;
+}
+
+.footer-style {
+  background-color: lightblue;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 5px auto 0;
+  width: 95%;
+}
+
+.category-list button {
+  background-color: lightblue;
+  border-radius: 5px;
+  height: 35px;
+  margin: 2px auto;
+  width: 32%;
+}

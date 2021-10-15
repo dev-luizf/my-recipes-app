@@ -1,0 +1,7 @@
+.ingredient-item {
+  display: block;
+}
+
+.checked {
+  text-decoration: line-through;
+}

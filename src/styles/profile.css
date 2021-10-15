@@ -1,0 +1,21 @@
+.btns-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.btns-profile button {
+  background-color: lightblue;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 10px;
+  width: 70%;
+}
+
+.btns-profile h3 {
+  font-size: 20px;
+  margin: 70px auto;
+  overflow-wrap: break-word;
+  text-align: center;
+  width: 70%;
+}

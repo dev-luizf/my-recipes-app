@@ -1,0 +1,41 @@
+.form-login {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 100px auto;
+  padding: 50px 5px;
+  width: 250px;
+}
+
+.form-login img {
+  display: block;
+  margin: 0 auto 25px;
+  width: 50px;
+}
+
+.form {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  align-self: center;
+  border: 0.2px solid;
+  border-radius: 5px;
+  height: 20px;
+  margin: 2px 0;
+  text-align: center;
+  width: 80%;
+}
+
+.form button {
+  border: 0.2px solid;
+  border-radius: 5px;
+  height: 25px;
+  margin: 25px auto 0;
+  width: 80%;
+}
+
+.form button:enabled {
+  background-color: lightgreen;
+}
